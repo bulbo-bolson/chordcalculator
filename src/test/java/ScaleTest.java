@@ -1,12 +1,15 @@
 import static org.junit.Assert.*;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 public class ScaleTest {
 
-    @Test
-    public void calcCuatriadChords() {
+    private Scale cMayor;
+
+    @Before
+    public void init() {
         Note c = new Note("c", 64);
         Note d = new Note("d", 65);
         Note e = new Note("e", 66);
@@ -22,15 +25,31 @@ public class ScaleTest {
         listOfNotes.add(g);
         listOfNotes.add(a);
         listOfNotes.add(b);
-        Scale cMayor = new Scale(listOfNotes);
+        cMayor = new Scale(listOfNotes);
+    }
+
+    @Test
+    public void calcGrade1Chords() {
 
         ArrayList<CuatriadChord> scaleChords = cMayor.calcCuatriadChords();
         CuatriadChord grade1 = scaleChords.get(0);
 
-        assert(grade1.getRoot().getName() == "c");
-        assert(grade1.getThird().getName() == "e");
-        assert(grade1.getFifth().getName() == "g");
-        assert(grade1.getSeventh().getName() == "b");
+        assertEquals("c",  grade1.getRoot().getName());
+        assertEquals("e", grade1.getThird().getName());
+        assertEquals("g", grade1.getFifth().getName());
+        assertEquals("b", grade1.getSeventh().getName());
+    }
+
+    @Test
+    public void calcGrade2Chords() {
+
+        ArrayList<CuatriadChord> scaleChords = cMayor.calcCuatriadChords();
+        CuatriadChord grade2 = scaleChords.get(1);
+
+        assertEquals("d",  grade2.getRoot().getName());
+        assertEquals("f", grade2.getThird().getName());
+        assertEquals("a", grade2.getFifth().getName());
+        assertEquals("c", grade2.getSeventh().getName());
     }
 
 }
