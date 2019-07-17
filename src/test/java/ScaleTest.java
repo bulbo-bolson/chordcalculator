@@ -52,4 +52,63 @@ public class ScaleTest {
         assertEquals("c", grade2.getSeventh().getName());
     }
 
+    @Test
+    public void calcGrade3Chords() {
+
+        ArrayList<CuatriadChord> scaleChords = cMayor.calcCuatriadChords();
+        CuatriadChord grade2 = scaleChords.get(2);
+
+        assertEquals("e",  grade2.getRoot().getName());
+        assertEquals("g", grade2.getThird().getName());
+        assertEquals("b", grade2.getFifth().getName());
+        assertEquals("d", grade2.getSeventh().getName());
+    }
+
+    @Test
+    public void calcGrade4Chords() {
+
+        ArrayList<CuatriadChord> scaleChords = cMayor.calcCuatriadChords();
+        CuatriadChord grade2 = scaleChords.get(3);
+
+        assertEquals("f",  grade2.getRoot().getName());
+        assertEquals("a", grade2.getThird().getName());
+        assertEquals("c", grade2.getFifth().getName());
+        assertEquals("e", grade2.getSeventh().getName());
+    }
+
+    @Test
+    public void calcGrade5Chords() {
+
+        ArrayList<CuatriadChord> scaleChords = cMayor.calcCuatriadChords();
+        CuatriadChord grade2 = scaleChords.get(4);
+
+        assertEquals("g",  grade2.getRoot().getName());
+        assertEquals("b", grade2.getThird().getName());
+        assertEquals("d", grade2.getFifth().getName());
+        assertEquals("f", grade2.getSeventh().getName());
+    }
+
+    @Test
+    public void calcGrade6Chords() {
+
+        ArrayList<CuatriadChord> scaleChords = cMayor.calcCuatriadChords();
+        CuatriadChord grade2 = scaleChords.get(5);
+
+        assertEquals("a",  grade2.getRoot().getName());
+        assertEquals("c", grade2.getThird().getName());
+        assertEquals("e", grade2.getFifth().getName());
+        assertEquals("g", grade2.getSeventh().getName());
+    }
+
+    @Test
+    public void calcGrade7Chords() {
+
+        ArrayList<CuatriadChord> scaleChords = cMayor.calcCuatriadChords();
+        CuatriadChord grade2 = scaleChords.get(6);
+
+        assertEquals("b",  grade2.getRoot().getName());
+        assertEquals("d", grade2.getThird().getName());
+        assertEquals("f", grade2.getFifth().getName());
+        assertEquals("a", grade2.getSeventh().getName());
+    }
 }

@@ -27,31 +27,22 @@ public class Scale {
 
     private int nextChordNoteIndex(int currentIndex) {
         int nextIndex;
-        // last note of scale, we have to reset the counter
-        if ((currentIndex + 1) == notes.size()) {
-            nextIndex = 2;
-        // last but one note of scale, we have to reset the counter
-        } else if ((currentIndex + 2) == notes.size()) {
-            nextIndex = 1;
-        }
-        // still inside the boundary
-        else {
-            nextIndex = currentIndex + 2;
-        }
+        nextIndex = nextScaleNoteIndex(currentIndex);
+        nextIndex = nextScaleNoteIndex(nextIndex);
         return nextIndex;
     }
 
-    private int nextScaleNoteIndex(int currentIndex) {
-        int nextIndex;
-        // last note of scale, we have to reset the counter
-        if ((currentIndex + 1) == notes.size()) {
-            // to the se
-            nextIndex = 0;
-        // still inside the boundary
+    private int nextScaleNoteIndex(int currentNoteIndex) {
+        int nextNoteIndex;
+        // last note of scale
+        if ((currentNoteIndex + 1) == notes.size()) {
+            // we have to reset the counter
+            nextNoteIndex = 0;
         } else {
-            nextIndex = currentIndex + 1;
+            // still inside boundary
+            nextNoteIndex = currentNoteIndex + 1;
         }
-        return nextIndex;
+        return nextNoteIndex;
     }
 
 }
