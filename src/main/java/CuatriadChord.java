@@ -11,6 +11,11 @@ public class CuatriadChord extends Chord {
         this.seventh = seventh;
     }
 
+    @Override
+    public String toString() {
+        return root.getName() + "-" +  third.getName() + "-" + fifth.getName() + "-" + seventh.getName();
+    }
+
     public Note getRoot() {
         return this.root;
     }
