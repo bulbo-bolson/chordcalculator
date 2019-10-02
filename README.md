@@ -6,6 +6,7 @@ Simple tool to calculate chords given a musical scale
 - package application
 ```
 cd /target/classes
+echo "Main-class: ChordCalculator" > manifest.txt
 jar -cvmf manifest.txt chord.jar *.class
 ```
 
