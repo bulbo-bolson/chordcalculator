@@ -2,6 +2,19 @@
 
 Simple tool to calculate chords given a musical scale
 
+## distribute
+- package application
+```
+cd /target/classes
+jar -cvmf manifest.txt chord.jar *.class
+```
+
+- execute application
+```
+java -jar chord.jar "C" "D" "E" "F" "G" "A"
+[C-E-G-C, E-G-C-E, G-C-E-G, C-E-G-C, E-G-C-E, G-C-E-G]
+```
+
 ## Examples:
 
 - Using the CLI:
